@@ -1,5 +1,6 @@
 package com.nsa.cm6123.assessment.monopoly;
 
+import com.nsa.cm6123.assessment.monopoly.game.Dice;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

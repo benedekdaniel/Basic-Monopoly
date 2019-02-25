@@ -1,4 +1,4 @@
-package com.nsa.cm6123.assessment.monopoly;
+package com.nsa.cm6123.assessment.monopoly.game;
 
 import java.util.Random;
 //Importing the Java random library for the dice method.

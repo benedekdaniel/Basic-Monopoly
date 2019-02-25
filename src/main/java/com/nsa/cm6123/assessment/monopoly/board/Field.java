@@ -1,4 +1,4 @@
-package com.nsa.cm6123.assessment.monopoly;
+package com.nsa.cm6123.assessment.monopoly.board;
 
 public class Field {
     private final String name;
