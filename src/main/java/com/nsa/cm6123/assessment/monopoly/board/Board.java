@@ -38,46 +38,46 @@ public class Board {
 
         //Implementing the fields for Monopoly London
 
-        fieldList.add(new Field("GO", SIXTY, 1));
-        fieldList.add(new Field("Old Kent Road", SIXTY, 2));
-        fieldList.add(new Field("Community Chest", ZERO, 3));
-        fieldList.add(new Field("Whitechapel Road", SIXTY, 4));
-        fieldList.add(new Field("Income Tax", TWOHUNDRED, 5));
-        fieldList.add(new Field("Kings Cross Station", SIXTY, 6));
-        fieldList.add(new Field("The angel, Islington", HUNDRED, 7));
-        fieldList.add(new Field("CHANCE", ZERO, 8));
-        fieldList.add(new Field("Euston Road", HUNDRED, 9));
-        fieldList.add(new Field("Pentonville Road", HUNDREDTWENTY, 10));
-        fieldList.add(new Field("Just Visiting Jail", ZERO, 11));
-        fieldList.add(new Field("Pall Mall", HUNDREDFORTY, 12));
-        fieldList.add(new Field("Electric Company", HUNDREDFORTY, 13));
-        fieldList.add(new Field("WhiteHall", HUNDREDFORTY, 14));
-        fieldList.add(new Field("NorthHumrl'd Avenue", HUNDREDSIXTY, 15));
-        fieldList.add(new Field("MaryLebone Station", TWOHUNDRED, 16));
-        fieldList.add(new Field("Community Chest", SIXTY, 17));
-        fieldList.add(new Field("Bow Street", HUNDREDEIGHTY, 18));
-        fieldList.add(new Field("Marlborough Street", HUNDREDEIGHTY, 19));
-        fieldList.add(new Field("Vine Street", TWOHUNDRED, 20));
-        fieldList.add(new Field("Free Parking", ZERO, 21));
-        fieldList.add(new Field("Strand", TWOHUNDREDTWENTY, 22));
-        fieldList.add(new Field("CHANCE", ZERO, 23));
-        fieldList.add(new Field("Fleet Street", TWOHUNDREDTWENTY, 24));
-        fieldList.add(new Field("Trafalgar Square", TWOHUNDREDFORTY, 25));
-        fieldList.add(new Field("Fenchurch St. Station", TWOHUNDRED, 26));
-        fieldList.add(new Field("Leicester Square", TWOHUNDREDSIXTY, 27));
-        fieldList.add(new Field("Coventry Street", TWOHUNDREDSIXTY, 28));
-        fieldList.add(new Field("Water Works", HUNDREDFIFTY, 29));
-        fieldList.add(new Field("Piccadilly", TWOHUNDREDEIGHTY, 30));
-        fieldList.add(new Field("Go to jail", ZERO, 31));
-        fieldList.add(new Field("Regent Street", THREEHUNDRED, 32));
-        fieldList.add(new Field("Oxford Street", THREEHUNDRED, 33));
-        fieldList.add(new Field("Community Chest", ZERO, 34));
-        fieldList.add(new Field("Bond Street", THREEHUNDREDTWENTY, 35));
-        fieldList.add(new Field("Liverpool St. Station", TWOHUNDRED, 36));
-        fieldList.add(new Field("CHANCE", ZERO, 37));
-        fieldList.add(new Field("Park Lane", THREEHUNDREDFIFTY, 38));
-        fieldList.add(new Field("Super Tax", HUNDRED, 39));
-        fieldList.add(new Field("Mayfair", FOURHUNDRED, 40));
+        fieldList.add(new Field("GO", SIXTY));
+        fieldList.add(new Field("Old Kent Road", SIXTY));
+        fieldList.add(new Field("Community Chest", ZERO));
+        fieldList.add(new Field("Whitechapel Road", SIXTY));
+        fieldList.add(new Field("Income Tax", TWOHUNDRED));
+        fieldList.add(new Field("Kings Cross Station", SIXTY));
+        fieldList.add(new Field("The angel, Islington", HUNDRED));
+        fieldList.add(new Field("CHANCE", ZERO));
+        fieldList.add(new Field("Euston Road", HUNDRED));
+        fieldList.add(new Field("Pentonville Road", HUNDREDTWENTY));
+        fieldList.add(new Field("Just Visiting Jail", ZERO));
+        fieldList.add(new Field("Pall Mall", HUNDREDFORTY));
+        fieldList.add(new Field("Electric Company", HUNDREDFORTY));
+        fieldList.add(new Field("WhiteHall", HUNDREDFORTY));
+        fieldList.add(new Field("NorthHumrl'd Avenue", HUNDREDSIXTY));
+        fieldList.add(new Field("MaryLebone Station", TWOHUNDRED));
+        fieldList.add(new Field("Community Chest", SIXTY));
+        fieldList.add(new Field("Bow Street", HUNDREDEIGHTY));
+        fieldList.add(new Field("Marlborough Street", HUNDREDEIGHTY));
+        fieldList.add(new Field("Vine Street", TWOHUNDRED));
+        fieldList.add(new Field("Free Parking", ZERO));
+        fieldList.add(new Field("Strand", TWOHUNDREDTWENTY));
+        fieldList.add(new Field("CHANCE", ZERO));
+        fieldList.add(new Field("Fleet Street", TWOHUNDREDTWENTY));
+        fieldList.add(new Field("Trafalgar Square", TWOHUNDREDFORTY));
+        fieldList.add(new Field("Fenchurch St. Station", TWOHUNDRED));
+        fieldList.add(new Field("Leicester Square", TWOHUNDREDSIXTY));
+        fieldList.add(new Field("Coventry Street", TWOHUNDREDSIXTY));
+        fieldList.add(new Field("Water Works", HUNDREDFIFTY));
+        fieldList.add(new Field("Piccadilly", TWOHUNDREDEIGHTY));
+        fieldList.add(new Field("Go to jail", ZERO));
+        fieldList.add(new Field("Regent Street", THREEHUNDRED));
+        fieldList.add(new Field("Oxford Street", THREEHUNDRED));
+        fieldList.add(new Field("Community Chest", ZERO));
+        fieldList.add(new Field("Bond Street", THREEHUNDREDTWENTY));
+        fieldList.add(new Field("Liverpool St. Station", TWOHUNDRED));
+        fieldList.add(new Field("CHANCE", ZERO));
+        fieldList.add(new Field("Park Lane", THREEHUNDREDFIFTY));
+        fieldList.add(new Field("Super Tax", HUNDRED));
+        fieldList.add(new Field("Mayfair", FOURHUNDRED));
     }
 
     //Getting the start field
@@ -97,8 +97,8 @@ public class Board {
     public Field moveTo(final Field from, final int dice) {
 
         int nextIndex = from.getIndex() - 1 + dice;
-        if (nextIndex > fieldList.size()) {
-            nextIndex = fieldList.size() - 1;
+        if (nextIndex > boardSize()) {
+            nextIndex = boardSize() - 1;
         }
 
         return fieldList.get(nextIndex).applyAction();
