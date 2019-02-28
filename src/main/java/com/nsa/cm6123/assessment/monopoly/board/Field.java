@@ -5,7 +5,7 @@ public class Field {
     private final int price;
     private final int index;
 
-    public Field(final String aname, final int aprice, final int ix) {
+    Field(final String aname, final int aprice, final int ix) {
         this.name = aname;
         this.price = aprice;
         index = ix;
