@@ -24,7 +24,7 @@ public class Board {
 
 
 
-    public ArrayList<Field> fieldList;
+    private ArrayList<Field> fieldList;
 
      public Board() {
 
@@ -79,6 +79,10 @@ public class Board {
         fieldList.add(new Field("Super Tax", HUNDRED));
         fieldList.add(new Field("Mayfair", FOURHUNDRED));
     }
+
+  public ArrayList<Field> getFieldlist() {
+         return fieldList;
+  }
 
     //Getting the start field
 

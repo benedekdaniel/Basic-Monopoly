@@ -1,7 +1,5 @@
 package com.nsa.cm6123.assessment.monopoly.player;
 
-import com.nsa.cm6123.assessment.monopoly.board.Field;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
@@ -15,6 +13,7 @@ public class Player {
     private static Logger LOGGER = null;
 
     static {
+
         //replace Player with the name of the class
         InputStream stream = Player.class.getClassLoader()
                 .getResourceAsStream("logging.properties");

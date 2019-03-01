@@ -2,8 +2,6 @@ package com.nsa.cm6123.assessment.monopoly;
 
 
 import com.nsa.cm6123.assessment.monopoly.board.Board;
-import com.nsa.cm6123.assessment.monopoly.board.Field;
-import com.nsa.cm6123.assessment.monopoly.player.Player;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,16 +19,15 @@ public class BoardTest {
     @Test
     public void testMoveToFunction() {
 
-
-
-        assertEquals(board.fieldList.get(3), board.moveTo(board.fieldList.get(2), 1));
+        assertEquals(board.getFieldlist().get(3),
+                board.moveTo(board.getFieldlist().get(2), 1));
     }
 
     @Test
     public void boardIndexTest() {
 
 
-        assertSame(board.getStartField(), board.fieldList.get(0));
+        assertSame(board.getStartField(), board.getFieldlist().get(0));
     }
 
     @Test
@@ -41,7 +38,7 @@ public class BoardTest {
 
     @Test
     public void startFieldIsEqualsToTheFirstField() {
-        assertEquals(board.getStartField(), board.fieldList.get(0));
+        assertEquals(board.getStartField(), board.getFieldlist().get(0));
     }
 
 
