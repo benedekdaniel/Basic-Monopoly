@@ -8,11 +8,13 @@ import java.util.List;
 
 public class Game {
 
-    List<Player> players;
-    Board theBoard;
+    private List<Player> players;
+    private Board theBoard;
+    private static final int ROLLING = 3;
+    private static final int INCREASE_BALANCE = 200;
 
-    public Game(Board theBoard, Player... somePlayers) {
-        this.theBoard = theBoard;
+    public Game(final Board aBoard, final Player... somePlayers) {
+        this.theBoard = aBoard;
 
 
         players = Arrays.asList(somePlayers);
@@ -22,10 +24,10 @@ public class Game {
         }
     }
 
-    public void playGame(){
+    public void playGame() {
 
 
-        int currentPlayerIdx=0;
+        int currentPlayerIdx = 0;
         Player currentPlayer = players.get(currentPlayerIdx);
 
 
@@ -33,16 +35,23 @@ public class Game {
         takeTurn(currentPlayer, theBoard);
 
         currentPlayerIdx++;
-        if (currentPlayerIdx == players.size()){
-            currentPlayerIdx=0;
+        if (currentPlayerIdx == players.size()) {
+            currentPlayerIdx = 0;
         }
 
 
     }
 
-    private void takeTurn(Player currentPlayer, Board theBoard) {
-        int diceRoll=3;
-        currentPlayer.setLocation(theBoard.moveTo(currentPlayer.getLocation(), diceRoll));
+    private void takeTurn(final Player currentPlayer, final Board aBoard) {
+
+        IDice dice = new ConstantDice(ROLLING);
+
+        currentPlayer.setLocation(aBoard.moveTo(currentPlayer
+                .getLocation(), dice.diceRoll()));
+        if (currentPlayer.getLocation() == aBoard.getStartField()) {
+            currentPlayer.setBalance(currentPlayer.getBalance()
+                    + INCREASE_BALANCE);
+        }
 
     }
 }
