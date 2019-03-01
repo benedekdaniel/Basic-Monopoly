@@ -1,5 +1,7 @@
 package com.nsa.cm6123.assessment.monopoly.player;
 
+import com.nsa.cm6123.assessment.monopoly.board.Field;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
@@ -28,6 +30,7 @@ public class Player {
 
     private Token token;
     private long balance;
+    private Field location;
 
     private static final long STARTING_BALANCE = 200L;
 
@@ -63,6 +66,14 @@ public class Player {
 
     public void setBalance(final long aBalance) {
         this.balance = aBalance;
+    }
+
+    public Field getLocation() {
+        return location;
+    }
+
+    public void setLocation(final Field aLocation) {
+        this.location = aLocation;
     }
 
     @Override
