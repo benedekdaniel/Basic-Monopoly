@@ -26,13 +26,13 @@ public class Player {
         }
     }
 
-    private String token;
+    private Token token;
     private long balance;
 
     private static final long STARTING_BALANCE = 200L;
 
 
-    public Player(final String aToken, final long aBalance) {
+    public Player(final Token aToken, final long aBalance) {
         this.token = aToken;
         this.balance = aBalance;
         LOGGER.info("Player created: Token = "
@@ -40,20 +40,20 @@ public class Player {
     }
 
 
-    public Player(final String aToken) {
+    public Player(final Token aToken) {
 
         this(aToken, STARTING_BALANCE);
     }
 
     public Player() {
-        this("Top Hat");
+        this(Token.COMPUTER);
     }
 
-    public String getToken() {
+    public Token getToken() {
         return token;
     }
 
-    public void setToken(final String aToken) {
+    public void setToken(final Token aToken) {
         this.token = aToken;
     }
 
