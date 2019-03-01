@@ -1,5 +1,6 @@
 package com.nsa.cm6123.assessment.monopoly;
 
+import com.nsa.cm6123.assessment.monopoly.board.Board;
 import com.nsa.cm6123.assessment.monopoly.player.Player;
 import com.nsa.cm6123.assessment.monopoly.player.Token;
 import org.junit.Before;
@@ -52,6 +53,17 @@ public class PlayerTest {
         assertEquals(100L, computer.getBalance());
 
     }
+
+    @Test
+    public void setAndGetLocation() {
+
+        Board board = new Board();
+
+        computer.setLocation(board.getStartField());
+
+        assertEquals(computer.getLocation(), board.getStartField());
+    }
+
 
     @Test
     public void toStringEquals() {
