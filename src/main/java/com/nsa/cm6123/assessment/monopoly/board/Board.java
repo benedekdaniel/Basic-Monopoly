@@ -101,9 +101,9 @@ public class Board {
     public Field moveTo(final Field from, final int dice) {
 
         int nextIndex = from.getIndex() + dice;
-//        if (nextIndex > boardSize()) {
-//            nextIndex = boardSize() - 1;
-//        }
+        if (nextIndex > boardSize()) {
+            nextIndex = boardSize() - 1;
+        }
 
         return fieldList.get(nextIndex).applyAction();
     }
