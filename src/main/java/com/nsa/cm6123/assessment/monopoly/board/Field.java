@@ -1,12 +1,18 @@
 package com.nsa.cm6123.assessment.monopoly.board;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Field {
     private final String name;
     private final int price;
+    private final AtomicInteger IX = new AtomicInteger(1);
+    private final int index;
 
-    public Field(final String aname, final int aprice) {
-        this.name = aname;
-        this.price = aprice;
+    Field(final String aName, final int aPrice) {
+        this.name = aName;
+        this.price = aPrice;
+        index = IX.incrementAndGet();
+
     }
 
     public String getName() {
@@ -15,6 +21,14 @@ public class Field {
 
     public int getPrice() {
         return price;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    Field applyAction() {
+        return this;
     }
 
     @Override

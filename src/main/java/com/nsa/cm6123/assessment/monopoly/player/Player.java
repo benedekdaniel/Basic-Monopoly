@@ -13,6 +13,7 @@ public class Player {
     private static Logger LOGGER = null;
 
     static {
+
         //replace Player with the name of the class
         InputStream stream = Player.class.getClassLoader()
                 .getResourceAsStream("logging.properties");
