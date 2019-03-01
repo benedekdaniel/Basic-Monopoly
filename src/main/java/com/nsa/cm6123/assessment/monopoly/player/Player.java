@@ -1,5 +1,7 @@
 package com.nsa.cm6123.assessment.monopoly.player;
 
+import com.nsa.cm6123.assessment.monopoly.board.Field;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;

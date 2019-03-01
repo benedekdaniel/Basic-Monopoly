@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Field {
     private final String name;
     private final int price;
-    private static final AtomicInteger IX = new AtomicInteger(0);
+    private final AtomicInteger IX = new AtomicInteger(1);
     private final int index;
 
     Field(final String aName, final int aPrice) {

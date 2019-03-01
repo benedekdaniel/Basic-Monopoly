@@ -23,7 +23,7 @@ public class BoardTest {
 
 
 
-        assertSame(board.fieldList.get(3), board.moveTo(board.fieldList.get(2), 1));
+        assertEquals(board.fieldList.get(3), board.moveTo(board.fieldList.get(2), 1));
     }
 
     @Test
