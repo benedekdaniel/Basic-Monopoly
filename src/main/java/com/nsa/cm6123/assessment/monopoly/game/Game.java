@@ -42,16 +42,23 @@ public class Game {
 
     }
 
+
+
     private void takeTurn(final Player currentPlayer, final Board aBoard) {
 
         IDice dice = new ConstantDice(ROLLING);
 
         currentPlayer.setLocation(aBoard.moveTo(currentPlayer
                 .getLocation(), dice.diceRoll()));
-        if (currentPlayer.getLocation() == aBoard.getStartField()) {
-            currentPlayer.setBalance(currentPlayer.getBalance()
-                    + INCREASE_BALANCE);
+
+        if ( wentFullCircle(currentPlayer, dice.diceRoll())) {
+            currentPlayer.setBalance(currentPlayer.getBalance() + 200);
         }
 
     }
+
+    private boolean wentFullCircle(final Player currentPlayer, final int dice) {
+            return ((currentPlayer.getLocation().getIndex() - dice) < 0);
+    }
+
 }

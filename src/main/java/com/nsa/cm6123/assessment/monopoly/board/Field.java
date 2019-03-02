@@ -27,9 +27,6 @@ public class Field {
         return index;
     }
 
-    Field applyAction() {
-        return this;
-    }
 
     @Override
     public String toString() {
