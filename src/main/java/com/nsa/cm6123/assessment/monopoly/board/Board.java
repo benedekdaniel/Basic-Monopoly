@@ -1,6 +1,8 @@
 package com.nsa.cm6123.assessment.monopoly.board;
 
+
 import java.util.ArrayList;
+
 
 public class Board {
 
@@ -21,7 +23,6 @@ public class Board {
     private static final int THREEHUNDREDTWENTY = 320;
     private static final int THREEHUNDREDFIFTY = 350;
     private static final int FOURHUNDRED = 400;
-
 
 
     private ArrayList<Field> fieldList;
@@ -100,12 +101,19 @@ public class Board {
 
     public Field moveTo(final Field from, final int dice) {
 
+
         int nextIndex = from.getIndex() + dice;
+        if (nextIndex < 0) {
+            throw new ArithmeticException("You can't roll negative " +
+                    "numbers");
+        }
         if (nextIndex > boardSize()) {
-            nextIndex = boardSize() - 1;
+            nextIndex = dice - (boardSize() - from.getIndex());
+
+
         }
 
-        return fieldList.get(nextIndex).applyAction();
+        return fieldList.get(nextIndex);
     }
 
 

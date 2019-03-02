@@ -1,8 +1,5 @@
-package com.nsa.cm6123.assessment.monopoly;
+package com.nsa.cm6123.assessment.monopoly.game;
 
-import com.nsa.cm6123.assessment.monopoly.game.ConstantDice;
-import com.nsa.cm6123.assessment.monopoly.game.Dice;
-import com.nsa.cm6123.assessment.monopoly.game.IDice;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

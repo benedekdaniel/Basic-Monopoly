@@ -1,7 +1,7 @@
-package com.nsa.cm6123.assessment.monopoly;
+package com.nsa.cm6123.assessment.monopoly.board;
 
-
-import com.nsa.cm6123.assessment.monopoly.board.Board;
+import com.nsa.cm6123.assessment.monopoly.game.ConstantDice;
+import com.nsa.cm6123.assessment.monopoly.game.IDice;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +23,14 @@ public class BoardTest {
                 board.moveTo(board.getFieldlist().get(2), 1));
     }
 
+    @Test(expected = ArithmeticException.class)
+    public void cantMoveBackwardsTest() {
+
+        IDice dice = new ConstantDice(-5);
+
+       board.moveTo(board.getStartField(), dice.diceRoll());
+    }
+
     @Test
     public void boardIndexTest() {
 
@@ -40,6 +48,5 @@ public class BoardTest {
     public void startFieldIsEqualsToTheFirstField() {
         assertEquals(board.getStartField(), board.getFieldlist().get(0));
     }
-
 
 }
