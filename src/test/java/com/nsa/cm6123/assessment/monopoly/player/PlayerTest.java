@@ -1,8 +1,7 @@
 package com.nsa.cm6123.assessment.monopoly.player;
 
 import com.nsa.cm6123.assessment.monopoly.board.Board;
-import com.nsa.cm6123.assessment.monopoly.player.Player;
-import com.nsa.cm6123.assessment.monopoly.player.Token;
+
 import org.junit.Before;
 import org.junit.Test;
 

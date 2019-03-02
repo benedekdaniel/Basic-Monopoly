@@ -13,7 +13,6 @@ public class GameTest {
     private Board board;
     private Game game;
     private Player carl;
-    private IDice dice;
     private static final int EXPECTED_BALANCE = 400;
 
 
@@ -73,7 +72,5 @@ public class GameTest {
     public void gettingTheBoardWorks() {
         assertEquals(game.getTheBoard().getFieldlist(), board.getFieldlist());
     }
-
-
 
 }

@@ -1,7 +1,5 @@
 package com.nsa.cm6123.assessment.monopoly.board;
 
-
-import com.nsa.cm6123.assessment.monopoly.board.Board;
 import com.nsa.cm6123.assessment.monopoly.game.ConstantDice;
 import com.nsa.cm6123.assessment.monopoly.game.IDice;
 import org.junit.Before;
@@ -50,6 +48,5 @@ public class BoardTest {
     public void startFieldIsEqualsToTheFirstField() {
         assertEquals(board.getStartField(), board.getFieldlist().get(0));
     }
-
 
 }
