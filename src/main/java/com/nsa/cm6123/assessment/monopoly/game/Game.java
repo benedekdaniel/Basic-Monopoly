@@ -10,11 +10,11 @@ public class Game {
 
     private List<Player> players;
     private Board theBoard;
-    private static final int ROLLING = 3;
+    private static final int ROLLING = 5;
     private static final int INCREASE_BALANCE = 200;
 
-    public Game(final Board aBoard, final Player... somePlayers) {
-        this.theBoard = aBoard;
+    public Game(final Board theBoard, final Player... somePlayers) {
+        this.theBoard = theBoard;
 
 
         players = Arrays.asList(somePlayers);
@@ -44,11 +44,11 @@ public class Game {
 
 
 
-    private void takeTurn(final Player currentPlayer, final Board aBoard) {
+    private void takeTurn(final Player currentPlayer, final Board theBoard) {
 
         IDice dice = new ConstantDice(ROLLING);
 
-        currentPlayer.setLocation(aBoard.moveTo(currentPlayer
+        currentPlayer.setLocation(theBoard.moveTo(currentPlayer
                 .getLocation(), dice.diceRoll()));
 
         if ( wentFullCircle(currentPlayer, dice.diceRoll())) {

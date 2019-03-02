@@ -4,14 +4,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Field {
     private final String name;
+    //mayfair is 39
     private final int price;
-    private final AtomicInteger iX = new AtomicInteger(1);
+    private static AtomicInteger iX = new AtomicInteger(0);
     private final int index;
 
     Field(final String aName, final int aPrice) {
         this.name = aName;
         this.price = aPrice;
-        index = iX.incrementAndGet();
+        index = iX.getAndIncrement();
+        if (index == 39) {
+            iX.set(0);
+        }
+
 
     }
 

@@ -3,7 +3,6 @@ package com.nsa.cm6123.assessment.monopoly.game;
 import com.nsa.cm6123.assessment.monopoly.board.Board;
 import com.nsa.cm6123.assessment.monopoly.player.Player;
 import com.nsa.cm6123.assessment.monopoly.player.Token;
-import com.nsa.cm6123.assessment.monopoly.game.Game;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,6 +51,19 @@ public class GameTest {
     }
 
     @Test
+    public void crossingFieldsWorking() {
+
+        //setting location to Mayfair and rolling 5
+
+        carl.setLocation(board.getFieldlist().get(39));
+
+        game.playGame();
+
+        assertEquals(carl.getLocation(), board.getFieldlist().get(4));
+
+    }
+
+    @Test
     public void makeSurePlayersIsInPlayersList() {
 
         assertTrue(game.getPlayers().contains(carl));
@@ -61,5 +73,7 @@ public class GameTest {
     public void gettingTheBoardWorks() {
         assertEquals(game.getTheBoard().getFieldlist(), board.getFieldlist());
     }
+
+
 
 }

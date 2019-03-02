@@ -1,8 +1,8 @@
 package com.nsa.cm6123.assessment.monopoly.board;
 
-import com.nsa.cm6123.assessment.monopoly.game.Game;
 
 import java.util.ArrayList;
+
 
 public class Board {
 
@@ -23,9 +23,6 @@ public class Board {
     private static final int THREEHUNDREDTWENTY = 320;
     private static final int THREEHUNDREDFIFTY = 350;
     private static final int FOURHUNDRED = 400;
-
-
-
 
 
     private ArrayList<Field> fieldList;
