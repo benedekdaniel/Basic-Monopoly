@@ -106,6 +106,10 @@ public class Board {
 
 
         int nextIndex = from.getIndex() + dice;
+        if (nextIndex < 0) {
+            throw new ArithmeticException("You can't roll negative " +
+                    "numbers");
+        }
         if (nextIndex > boardSize()) {
             nextIndex = dice - (boardSize() - from.getIndex());
 

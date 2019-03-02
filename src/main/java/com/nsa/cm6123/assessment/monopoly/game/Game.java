@@ -52,7 +52,7 @@ public class Game {
                 .getLocation(), dice.diceRoll()));
 
         if ( wentFullCircle(currentPlayer, dice.diceRoll())) {
-            currentPlayer.setBalance(currentPlayer.getBalance() + 200);
+            currentPlayer.setBalance(currentPlayer.getBalance() + INCREASE_BALANCE);
         }
 
     }
@@ -61,4 +61,11 @@ public class Game {
             return ((currentPlayer.getLocation().getIndex() - dice) < 0);
     }
 
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public Board getTheBoard() {
+        return theBoard;
+    }
 }

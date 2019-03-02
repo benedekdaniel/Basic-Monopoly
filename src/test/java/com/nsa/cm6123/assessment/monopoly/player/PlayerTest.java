@@ -15,7 +15,7 @@ public class PlayerTest {
 
 
     @Before
-    public void constructTopHatPlayer() {
+    public void constructComputerPlayer() {
         computer = new Player();
 
     }
