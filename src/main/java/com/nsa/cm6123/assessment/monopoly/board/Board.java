@@ -117,12 +117,19 @@ public class Board {
     public Field moveTo(final Field from, final int dice) {
 
 
+
         int nextIndex = from.getIndex() + dice;
         if (nextIndex < 0) {
             throw new ArithmeticException("You can't roll negative " +
                     "numbers");
         }
         if (nextIndex > boardSize()) {
+
+            /**
+             * If player on 39 and roll 6 nextindex is
+             * 6 - (40-39) = 5
+             */
+
             nextIndex = dice - (boardSize() - from.getIndex());
 
         }

@@ -41,7 +41,8 @@ public class Field {
 
     @Override
     public String toString() {
-        return String.format("%s |cost is: %d", name, price);
+        return "Location = " +
+        name + " price is = " + price;
     }
 
 }
