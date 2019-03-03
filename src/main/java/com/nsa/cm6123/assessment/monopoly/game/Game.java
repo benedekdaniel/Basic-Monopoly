@@ -73,7 +73,8 @@ public class Game {
 
     }
 
-    private boolean wentFullCircle(final Player currentPlayer, final int aDice) {
+    private boolean wentFullCircle(final Player currentPlayer
+            , final int aDice) {
 
         //Checking whether the player just crossed the start field
         //Or not by subtracting the dice number from his currentLoc
