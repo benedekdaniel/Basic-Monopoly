@@ -1,36 +1,41 @@
 package com.nsa.cm6123.assessment.monopoly.game;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class DiceTest {
 
+    private Dice theDice;
+
+
+    @Before
+    public void constructDice() {
+        theDice = new Dice();
+    }
 
 
     @Test
     public void diceRollNotMoreThan13() {
 
-        IDice dice = new Dice();
 
-        assertTrue(dice.diceRoll() < 13);
+        assertTrue(theDice.diceRoll() < 13);
     }
 
     @Test
     public void diceIsNotANegativeNumber() {
 
-        IDice dice = new Dice();
-
-        assertFalse(dice.diceRoll() <= 1);
+        assertFalse(theDice.diceRoll() <= 1);
 
     }
 
     @Test
     public void makeSureConstantDiceGivesBackAppropriateValue() {
 
-        IDice dice = new ConstantDice(5);
+        IDice constDice = new ConstantDice(6);
 
-        assertEquals(dice.diceRoll(), 5);
+        assertEquals(constDice.diceRoll(), 6);
 
     }
 }

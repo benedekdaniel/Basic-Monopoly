@@ -8,7 +8,7 @@ public class Dice implements IDice {
     private static Random dice = new Random();
     private static final int MAX_DICE_ROLL = 6;
 
-    /**
+    /*
      * Implementing 2 dices
      */
 

@@ -13,16 +13,22 @@ public class GameTest {
     private Board board;
     private Game game;
     private Player carl;
-    private static final int EXPECTED_BALANCE = 400;
+    private static final long EXPECTED_MONEY = 400L;
+    private static final long EXPECTED_BALANCE2 = 100L;
+    private static final long ORIGINAL_BALANCE = 200L;
+
+
+
 
     /* DICE roll as it is a constant dice atm it will
-     * roll 6 every time, can be changed in game
+     * roll 5 every time which not a property, can be changed in game
+     * If player stands on a property, he buys it.
      */
 
 
     @Before
-    public void init() {
-        carl = new Player(Token.COMPUTER);
+    public void constructGame() {
+        carl = new Player(Token.CAR, ORIGINAL_BALANCE);
 
         board = new Board();
 
@@ -30,39 +36,39 @@ public class GameTest {
 
         carl.setLocation(board.getStartField());
 
+        game.playGame();
+
     }
 
 
     @Test
     public void playGame() {
 
-        game.playGame();
 
-        assertEquals(carl.getLocation(), board.getFieldlist().get(6));
-
-    }
-
-    @Test
-    public void crossingStartFieldWillGive200() {
-
-        carl.setLocation(board.getFieldlist().get(38));
-
-        game.playGame();
-
-        assertEquals(carl.getBalance(), EXPECTED_BALANCE);
+        assertEquals(board.getFieldlist().get(6), carl.getLocation());
 
     }
+
 
     @Test
     public void crossingFieldsWorking() {
 
-        //setting location to Mayfair and rolling 6
+        //setting location to Super Tax(38) and rolling 5
 
-        carl.setLocation(board.getFieldlist().get(39));
+        Player patricia = new Player(Token.GLOBE);
 
-        game.playGame();
+        Board newBoard = new Board();
 
-        assertEquals(carl.getLocation(), board.getFieldlist().get(5));
+        Game newGame = new Game(newBoard, patricia);
+
+
+        patricia.setLocation(newBoard.getFieldlist().get(38));
+
+        newGame.playGame();
+
+        assertEquals(newBoard.getFieldlist().get(3), patricia.getLocation());
+
+
 
     }
 
@@ -87,16 +93,15 @@ public class GameTest {
     @Test
     public void buyingPropertyReducesBalance() {
 
+        carl.setLocation(board.getFieldlist().get(1));
 
-        game.playGame();
 
-        assertEquals(100, carl.getBalance());
+        assertEquals(EXPECTED_BALANCE2, carl.getBalance());
     }
 
     @Test
     public void buyingPropertyAppendsPlayerPortfolio() {
 
-        game.playGame();
 
         assertTrue(carl.getPlayerPortfolio().size() > 0);
     }
@@ -125,6 +130,8 @@ public class GameTest {
         Player helene = new Player(Token.BICYCLE);
 
         helene.setLocation(board.getStartField());
+
+        carl.setLocation(board.getStartField());
 
         game = new Game(board, carl, helene);
 

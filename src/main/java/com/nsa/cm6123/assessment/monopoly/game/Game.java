@@ -12,10 +12,10 @@ public class Game {
 
     private List<Player> players;
     private Board theBoard;
-    private static final int ROLLING = 6;
+    private static final int ROLLING = 5;
     private static final int INCREASE_BALANCE = 200;
 
-    Game(final Board aBoard, final Player... somePlayers) {
+     Game(final Board aBoard, final Player... somePlayers) {
         this.theBoard = aBoard;
 
 

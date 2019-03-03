@@ -8,20 +8,21 @@ import static org.junit.Assert.*;
 public class FieldTest {
 
     private static final int EXPECTED = 60;
-    private static final int EXPECTED_START = 0;
-    private Board board;
+    private static final int EXPECTED_NUM = 4;
+    private Board theBoard;
 
     @Before
-    public void init() {
+    public void initi() {
 
-        board = new Board();
+        theBoard = new Board();
 
     }
 
     @Test
     public void getNameTest() {
 
-        assertEquals("Community Chest", board.getFieldlist().get(2).getName());
+        assertEquals("Community Chest",
+                theBoard.getFieldlist().get(2).getName());
     }
 
 
@@ -29,21 +30,16 @@ public class FieldTest {
     public void getPriceTest() {
 
 
-        assertEquals(EXPECTED, board.getFieldlist().get(1).getPrice());
+        assertEquals(EXPECTED, theBoard.getFieldlist().get(0).getPrice());
     }
 
-    @Test
-    public void getIndexTest() {
-
-        assertEquals(EXPECTED_START, board.getFieldlist().get(0).getIndex());
-    }
 
     @Test
     public void toStringEquals() {
 
         String expectedObject = "Location = " +
                 "GO" + " price is = " + EXPECTED;
-        assertEquals(expectedObject, board.getStartField().toString());
+        assertEquals(expectedObject, theBoard.getStartField().toString());
     }
 
 }
