@@ -4,6 +4,7 @@ import com.nsa.cm6123.assessment.monopoly.board.Field;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -34,10 +35,14 @@ public class Player {
 
     private static final long STARTING_BALANCE = 200L;
 
+    private ArrayList<Field> playerPortfolio;
+
 
     public Player(final Token aToken, final long aBalance) {
         this.token = aToken;
         this.balance = aBalance;
+        playerPortfolio = new ArrayList<Field>();
+
         LOGGER.info("Player created: Token = "
                 + token + ", aBalance = " + balance);
     }
@@ -74,6 +79,10 @@ public class Player {
 
     public void setLocation(final Field aLocation) {
         this.location = aLocation;
+    }
+
+    public ArrayList<Field> getPlayerPortfolio() {
+        return playerPortfolio;
     }
 
     @Override

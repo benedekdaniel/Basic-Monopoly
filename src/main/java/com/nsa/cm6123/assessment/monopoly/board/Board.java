@@ -23,11 +23,20 @@ public class Board {
     private static final int THREEHUNDREDTWENTY = 320;
     private static final int THREEHUNDREDFIFTY = 350;
     private static final int FOURHUNDRED = 400;
+    private static final int RENT_2 = 2;
+    private static final int RENT_4 = 4;
+    private static final int RENT_5 = 5;
+    private static final int RENT_6 = 6;
+    private static final int RENT_8 = 8;
+    private static final int RENT_10 = 10;
+
 
 
     private ArrayList<Field> fieldList;
 
      public Board() {
+
+         //Building the board
 
         makeBoard();
 
@@ -37,48 +46,54 @@ public class Board {
 
         fieldList = new ArrayList<Field>();
 
-        //Implementing the fields for Monopoly London
+        /* Implementing the fields for Monopoly London
+         * In single ArrayList
+         */
 
         fieldList.add(new Field("GO", SIXTY));
-        fieldList.add(new Field("Old Kent Road", SIXTY));
+        fieldList.add(new Property("Old Kent Road", SIXTY, RENT_2));
         fieldList.add(new Field("Community Chest", ZERO));
-        fieldList.add(new Field("Whitechapel Road", SIXTY));
+        fieldList.add(new Property("Whitechapel Road", SIXTY, RENT_2));
         fieldList.add(new Field("Income Tax", TWOHUNDRED));
         fieldList.add(new Field("Kings Cross Station", SIXTY));
-        fieldList.add(new Field("The angel, Islington", HUNDRED));
+        fieldList.add(new Property("The angel, Islington", HUNDRED, RENT_4));
         fieldList.add(new Field("CHANCE", ZERO));
-        fieldList.add(new Field("Euston Road", HUNDRED));
-        fieldList.add(new Field("Pentonville Road", HUNDREDTWENTY));
+        fieldList.add(new Property("Euston Road", HUNDRED, RENT_4));
+        fieldList.add(new Property("Pentonville Road", HUNDREDTWENTY, RENT_6));
         fieldList.add(new Field("Just Visiting Jail", ZERO));
-        fieldList.add(new Field("Pall Mall", HUNDREDFORTY));
+        fieldList.add(new Property("Pall Mall", HUNDREDFORTY, RENT_6));
         fieldList.add(new Field("Electric Company", HUNDREDFORTY));
-        fieldList.add(new Field("WhiteHall", HUNDREDFORTY));
-        fieldList.add(new Field("NorthHumrl'd Avenue", HUNDREDSIXTY));
+        fieldList.add(new Property("WhiteHall", HUNDREDFORTY, RENT_5));
+        fieldList.add(new Property("NorthHumrl'd Avenue", HUNDREDSIXTY
+                , RENT_8));
         fieldList.add(new Field("MaryLebone Station", TWOHUNDRED));
         fieldList.add(new Field("Community Chest", SIXTY));
-        fieldList.add(new Field("Bow Street", HUNDREDEIGHTY));
-        fieldList.add(new Field("Marlborough Street", HUNDREDEIGHTY));
-        fieldList.add(new Field("Vine Street", TWOHUNDRED));
+        fieldList.add(new Property("Bow Street", HUNDREDEIGHTY, RENT_6));
+        fieldList.add(new Property("Marlborough Street", HUNDREDEIGHTY
+                , RENT_6));
+        fieldList.add(new Property("Vine Street", TWOHUNDRED, RENT_6));
         fieldList.add(new Field("Free Parking", ZERO));
-        fieldList.add(new Field("Strand", TWOHUNDREDTWENTY));
+        fieldList.add(new Property("Strand", TWOHUNDREDTWENTY, RENT_6));
         fieldList.add(new Field("CHANCE", ZERO));
-        fieldList.add(new Field("Fleet Street", TWOHUNDREDTWENTY));
-        fieldList.add(new Field("Trafalgar Square", TWOHUNDREDFORTY));
+        fieldList.add(new Property("Fleet Street", TWOHUNDREDTWENTY, RENT_8));
+        fieldList.add(new Property("Trafalgar Square", TWOHUNDREDFORTY
+                , RENT_8));
         fieldList.add(new Field("Fenchurch St. Station", TWOHUNDRED));
-        fieldList.add(new Field("Leicester Square", TWOHUNDREDSIXTY));
-        fieldList.add(new Field("Coventry Street", TWOHUNDREDSIXTY));
+        fieldList.add(new Property("Leicester Square", TWOHUNDREDSIXTY
+                , RENT_8));
+        fieldList.add(new Property("Coventry Street", TWOHUNDREDSIXTY, RENT_8));
         fieldList.add(new Field("Water Works", HUNDREDFIFTY));
-        fieldList.add(new Field("Piccadilly", TWOHUNDREDEIGHTY));
+        fieldList.add(new Property("Piccadilly", TWOHUNDREDEIGHTY, RENT_10));
         fieldList.add(new Field("Go to jail", ZERO));
-        fieldList.add(new Field("Regent Street", THREEHUNDRED));
-        fieldList.add(new Field("Oxford Street", THREEHUNDRED));
+        fieldList.add(new Property("Regent Street", THREEHUNDRED, RENT_10));
+        fieldList.add(new Property("Oxford Street", THREEHUNDRED, RENT_5));
         fieldList.add(new Field("Community Chest", ZERO));
-        fieldList.add(new Field("Bond Street", THREEHUNDREDTWENTY));
+        fieldList.add(new Property("Bond Street", THREEHUNDREDTWENTY, RENT_10));
         fieldList.add(new Field("Liverpool St. Station", TWOHUNDRED));
         fieldList.add(new Field("CHANCE", ZERO));
-        fieldList.add(new Field("Park Lane", THREEHUNDREDFIFTY));
+        fieldList.add(new Property("Park Lane", THREEHUNDREDFIFTY, RENT_10));
         fieldList.add(new Field("Super Tax", HUNDRED));
-        fieldList.add(new Field("Mayfair", FOURHUNDRED));
+        fieldList.add(new Property("Mayfair", FOURHUNDRED, RENT_10));
     }
 
   public ArrayList<Field> getFieldlist() {
@@ -110,9 +125,7 @@ public class Board {
         if (nextIndex > boardSize()) {
             nextIndex = dice - (boardSize() - from.getIndex());
 
-
         }
-
         return fieldList.get(nextIndex);
     }
 
