@@ -34,7 +34,7 @@ public class GameTest {
 
         game.playGame();
 
-        assertEquals(carl.getLocation(), board.getFieldlist().get(5));
+        assertEquals(carl.getLocation(), board.getFieldlist().get(6));
 
     }
 
@@ -58,7 +58,7 @@ public class GameTest {
 
         game.playGame();
 
-        assertEquals(carl.getLocation(), board.getFieldlist().get(4));
+        assertEquals(carl.getLocation(), board.getFieldlist().get(5));
 
     }
 
@@ -71,6 +71,24 @@ public class GameTest {
     @Test
     public void gettingTheBoardWorks() {
         assertEquals(game.getTheBoard().getFieldlist(), board.getFieldlist());
+    }
+
+    @Test
+    public void buyingPropertyReducesBalance() {
+
+
+
+        game.playGame();
+
+        assertEquals(carl.getBalance(), 100);
+    }
+
+    @Test
+    public void buyingPropertyAppendsPlayerPortfolio() {
+
+        game.playGame();
+
+        assertTrue(carl.getPlayerPortfolio().size() > 0);
     }
 
 }
