@@ -13,4 +13,9 @@ public class Property extends Field {
     public int getRent() {
         return rent;
     }
+
+    @Override
+    public int getIndex() {
+        return super.getIndex();
+    }
 }

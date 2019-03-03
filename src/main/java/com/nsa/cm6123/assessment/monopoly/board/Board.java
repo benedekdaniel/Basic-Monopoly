@@ -130,7 +130,7 @@ public class Board {
              * 6 - (40-39) = 5
              */
 
-            nextIndex = dice - (boardSize() - from.getIndex());
+            nextIndex = (dice - (boardSize() - from.getIndex()) - 1);
 
         }
         return fieldList.get(nextIndex);
