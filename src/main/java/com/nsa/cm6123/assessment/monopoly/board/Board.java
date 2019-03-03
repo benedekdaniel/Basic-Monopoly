@@ -125,7 +125,7 @@ public class Board {
         }
         if (nextIndex > boardSize()) {
 
-            /**
+            /*
              * If player on 39 and roll 6 nextindex is
              * 6 - (40-39) = 5
              */
