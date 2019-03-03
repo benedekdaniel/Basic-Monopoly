@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
 
 public class BoardTest {
 
+    private static final int EXPECTED_SIZE = 40;
+
     private Board board;
 
     @Before
@@ -16,11 +18,12 @@ public class BoardTest {
         board = new Board();
     }
 
+
     @Test
     public void testMoveToFunction() {
 
-        assertEquals(board.getFieldlist().get(3),
-                board.moveTo(board.getFieldlist().get(2), 1));
+        assertEquals(board.moveTo(board.getFieldlist().get(2)
+                , 1), board.getFieldlist().get(3));
     }
 
     @Test(expected = ArithmeticException.class)
@@ -41,12 +44,12 @@ public class BoardTest {
     @Test
     public void boardSizeEqualsTo40() {
 
-        assertEquals(board.boardSize(), 40);
+        assertEquals(EXPECTED_SIZE, board.boardSize());
     }
 
     @Test
     public void startFieldIsEqualsToTheFirstField() {
-        assertEquals(board.getStartField(), board.getFieldlist().get(0));
+        assertEquals(board.getFieldlist().get(0), board.getStartField());
     }
 
 }

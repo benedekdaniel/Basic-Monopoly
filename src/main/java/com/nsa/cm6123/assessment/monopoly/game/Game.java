@@ -35,19 +35,22 @@ public class Game {
         //getting first player and taking turn
 
         int currentPlayerIdx = 0;
-        Player currentPlayer = players.get(currentPlayerIdx);
 
-        takeTurn(currentPlayer, theBoard);
+        while (currentPlayerIdx != players.size()) {
+            Player currentPlayer = players.get(currentPlayerIdx);
 
-        currentPlayerIdx++;
+            takeTurn(currentPlayer, theBoard);
 
-        //If all players took their turn next player is
-        //first player
-        if (currentPlayerIdx == players.size()) {
-            currentPlayerIdx = 0;
+            currentPlayerIdx++;
+
+            //If all players took their turn
+            //the game terminates
+            }
+
+
         }
 
-    }
+
 
 
     private void takeTurn(final Player currentPlayer, final Board aBoard) {
@@ -70,11 +73,12 @@ public class Game {
 
     }
 
-    private boolean wentFullCircle(final Player currentPlayer, final int dice) {
+    private boolean wentFullCircle(final Player currentPlayer
+            , final int aDice) {
 
-            //Checking whether the player just crossed the start field
-            //Or not by subtracting the dice number from his currentLoc
-            return ((currentPlayer.getLocation().getIndex() - dice) < 0);
+        //Checking whether the player just crossed the start field
+        //Or not by subtracting the dice number from his currentLoc
+        return ((currentPlayer.getLocation().getIndex() - aDice) < 0);
     }
 
     private void buyProperty(final Player currentplayer, final Field field) {
