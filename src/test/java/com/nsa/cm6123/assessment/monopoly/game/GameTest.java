@@ -15,7 +15,7 @@ public class GameTest {
     private Player carl;
     private static final int EXPECTED_BALANCE = 400;
 
-    /** DICE roll as it is a constant dice atm it will
+    /* DICE roll as it is a constant dice atm it will
      * roll 6 every time, can be changed in game
      */
 
@@ -56,7 +56,7 @@ public class GameTest {
     @Test
     public void crossingFieldsWorking() {
 
-        //setting location to Mayfair and rolling 5
+        //setting location to Mayfair and rolling 6
 
         carl.setLocation(board.getFieldlist().get(39));
 

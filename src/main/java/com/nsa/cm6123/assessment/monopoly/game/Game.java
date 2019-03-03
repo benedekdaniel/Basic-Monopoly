@@ -46,6 +46,8 @@ public class Game {
             //If all players took their turn
             //the game terminates
             }
+
+
         }
 
 
@@ -71,11 +73,11 @@ public class Game {
 
     }
 
-    private boolean wentFullCircle(final Player currentPlayer, final int dice) {
+    private boolean wentFullCircle(final Player currentPlayer, final int aDice) {
 
         //Checking whether the player just crossed the start field
         //Or not by subtracting the dice number from his currentLoc
-        return ((currentPlayer.getLocation().getIndex() - dice) < 0);
+        return ((currentPlayer.getLocation().getIndex() - aDice) < 0);
     }
 
     private void buyProperty(final Player currentplayer, final Field field) {
